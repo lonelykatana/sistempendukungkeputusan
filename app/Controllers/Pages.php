@@ -15,9 +15,9 @@ class Pages extends BaseController
     public function rekomendasi()
     {
         $data = [
-            'title' => 'Rekomendasi'
+            'title' => 'Opsi'
         ];
-        return view('pages/rekomendasi', $data);
+        return view('pages/opsi', $data);
     }
 
     public function about()
