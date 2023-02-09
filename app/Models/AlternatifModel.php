@@ -19,4 +19,10 @@ class AlternatifModel extends Model
 
         return $this->where(['id' => $id])->first();
     }
+
+    public function getJumlahAlternatif()
+    {
+        $query = $this->db->query('SELECT * FROM alternatif');
+        return $query->getNumRows();
+    }
 }

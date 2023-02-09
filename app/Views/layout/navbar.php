@@ -15,7 +15,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/alternatif">Opsi</a></li>
-            <li><a class="dropdown-item" href="#">Preferensi</a></li>
+            <li><a class="dropdown-item" href="/alternatif/preferensi">Preferensi</a></li>
             <li><a class="dropdown-item" href="#">Ranking</a></li>
           </ul>
         </li>
