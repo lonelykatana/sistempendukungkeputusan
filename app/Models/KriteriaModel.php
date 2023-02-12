@@ -8,24 +8,17 @@ use mysqli;
 
 class KriteriaModel extends Model
 {
+    // protected $irModel;
     protected $table = 'kriteria';
     //protected $useTimestamps = true;
     protected $allowedFields = ['nama', 'bobot', 'atribut'];
-
-    // public function showTabelPerbandinganKriteria()
+    // public function __construct()
     // {
-    //     $n = $this->getJumlahKriteria();
-    //     $query = $this->db->query('SELECT nama from kriteria ORDER BY id');
-    //     if (!$query) {
-    //         echo 'Error koneksi database!';
-    //         exit();
-    //     }
-
-    //     while ($query) {
-    //         $pilihan[] = $query['nama'];
-    //     }
-
+    //     $this->irModel = new IrModel();
     // }
+
+
+
 
     public function getListNamaPilihan()
     {
@@ -52,23 +45,46 @@ class KriteriaModel extends Model
             echo 'Error!';
             exit();
         }
-
-        if ($query->getNumRows() == 0) {
-            $nilai = 1;
-        } else {
-            foreach ($query as $row) {
-                $nilai = $row->nilai;
-            }
-        }
-        return $nilai;
+        return $query;
     }
 
     public function getKriteriaId($no_urut)
     {
-        $query = $this->db->query('SELECT id FROM kriteria ORDER BY id');
+        $query = $this->db->query('SELECT id FROM kriteria ORDER BY id')->getResult();
         foreach ($query as $row) {
             $listId[] = $row->id;
         }
         return $listId[($no_urut)];
+    }
+
+    public function getBobot($id)
+    {
+        return $this->db->query("SELECT bobot FROM kriteria WHERE id=$id");
+    }
+
+    public function getLambdaMax($matriks_a, $matriks_b, $n)
+    {
+        $lambdaMax = 0;
+        for ($i = 0; $i <= ($n - 1); $i++) {
+            $lambdaMax += ($matriks_a[$i] * (($matriks_b[$i]) / $n));
+        }
+        return $lambdaMax;
+    }
+
+    public function getConsIndex($matriks_a, $matriks_b, $n)
+    {
+        $lambdmax = $this->getLambdaMax($matriks_a, $matriks_b, $n);
+        $consIndex = (($lambdmax - $n) / ($n - 1));
+
+        return $consIndex;
+    }
+
+    public function getConsRatio($matriks_a, $matriks_b, $n)
+    {
+        $irModel = new IrModel();
+        $consIndex = $this->getConsIndex($matriks_a, $matriks_b, $n);
+        $consRatio = $consIndex / ($irModel->getNilai($n));
+
+        return $consRatio;
     }
 }

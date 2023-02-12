@@ -8,15 +8,15 @@ use CodeIgniter\Model;
 class IrModel extends Model
 {
     protected $table = 'ir';
-    //protected $useTimestamps = true;
     protected $allowedFields = ['jumlah', 'nilai'];
 
-    // public function getKomik($slug = false)
-    // {
-    //     if ($slug == false) {
-    //         return $this->findAll();
-    //     }
+    public function getNilai($jmlKriteria)
+    {
+        $query = $this->db->query("SELECT nilai FROM ir WHERE jumlah=$jmlKriteria")->getResult();
 
-    //     return $this->where(['slug' => $slug])->first();
-    // }
+        foreach ($query as $row) {
+            $nilaiIr = $row->nilai;
+        }
+        return $nilaiIr;
+    }
 }

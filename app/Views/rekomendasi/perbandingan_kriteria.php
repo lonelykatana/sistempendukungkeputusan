@@ -5,12 +5,18 @@
     <div class="row">
         <div class="col">
             <h3 class="mt-2">Perbandingan Kriteria</h3>
+            <?php if (session()->getFlashdata('pesan')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?= session()->getFlashdata('pesan'); ?>
+                </div>
+            <?php endif; ?>
             <?php
             d($pilihan);
             d($n) ?>
 
 
             <form action="/alternatif/proses" method="post">
+
                 <table class="table">
                     <thead>
                         <tr>

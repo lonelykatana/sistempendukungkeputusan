@@ -44,6 +44,7 @@ class Alternatif extends BaseController
         return view('rekomendasi/perbandingan_kriteria', $data);
     }
 
+
     public function proses()
     {
         $n = $this->kriteriaModel->getJumlahKriteria();
@@ -66,23 +67,57 @@ class Alternatif extends BaseController
             }
         }
 
+
+        // diagonal --> bernilai 1
         for ($i = 0; $i <= ($n - 1); $i++) {
             $matriks[$i][$i] = 1;
         }
 
+        // inisialisasi jumlah tiap kolom dan baris kriteria
         $jmlmpb = array();
-        $jmlmpk = array();
+        $jmlmnk = array();
         for ($i = 0; $i <= ($n - 1); $i++) {
             $jmlmpb[$i] = 0;
-            $jmlmpk[$i] = 0;
+            $jmlmnk[$i] = 0;
         }
 
+        // menghitung jumlah pada kolom kriteria tabel perbandingan berpasangan
         for ($x = 0; $x <= ($n - 1); $x++) {
             for ($y = 0; $y <= ($n - 1); $y++) {
-                $value = $matriks[$x][$y];
+                $value        = $matriks[$x][$y];
                 $jmlmpb[$y] += $value;
             }
         }
+
+        // menghitung jumlah pada baris kriteria tabel nilai kriteria yang telah dinormalisasi
+        // matrikb merupakan matrik yang telah dinormalisasi
+        for ($x = 0; $x <= ($n - 1); $x++) {
+            for ($y = 0; $y <= ($n - 1); $y++) {
+                $matriksb[$x][$y] = $matriks[$x][$y] / $jmlmpb[$y];
+                $value    = $matriksb[$x][$y];
+                $jmlmnk[$x] += $value;
+            }
+
+            // nilai priority vektor
+            $bobotKriteria[$x]     = $jmlmnk[$x] / $n;
+
+            // memasukkan nilai priority vektor ke dalam tabel pv_kriteria dan pv_alternatif
+            $id_kriteria = $this->kriteriaModel->getKriteriaId($x);
+            $this->inputBobotKriteria($id_kriteria, $bobotKriteria[$x]);
+        }
+        // cek konsistensi
+        $lambdaMax = $this->kriteriaModel->getLambdaMax($jmlmpb, $jmlmnk, $n);
+        $consIndex   = $this->kriteriaModel->getConsIndex($jmlmpb, $jmlmnk, $n);
+        $consRatio   = $this->kriteriaModel->getConsRatio($jmlmpb, $jmlmnk, $n);
+
+        $data = [
+            'title' => 'output AHP',
+            'lambdaMax' => $lambdaMax,
+            'consIndex' => $consIndex,
+            'consRatio' => $consRatio
+        ];
+
+        return view('/rekomendasi/output_ahp', $data);
     }
 
 
@@ -95,17 +130,33 @@ class Alternatif extends BaseController
         $id_kriteria2 = $this->kriteriaModel->getKriteriaId($kriteria2);
 
         $result = $this->kriteriaModel->getNilaiPerbandinganKriteria($kriteria1, $kriteria2);
-
-        if (($result->getNumRows) == 0) {
+        if ($result->getNumRows() == 0) {
             $this->perbandinganKriteriaModel->save([
-                'kriteria1' => $kriteria1,
-                'kriteria2' => $kriteria2,
+                'kriteria1' => $id_kriteria1,
+                'kriteria2' => $id_kriteria2,
                 'nilai' => $nilai
             ]);
+
+            // session()->setFlashdata('pesan', 'Data berhasil ditambah');
+            // return redirect()->to(base_url() . '/alternatif');
+
+            echo 'berhasil tambah data!!!';
         } else {
             $builder->set('nilai', $nilai, false);
             $builder->where('kriteria1', $id_kriteria1)->where('kriteria2', $id_kriteria2);
             $builder->update();
+
+            // session()->setFlashdata('pesan', 'Data berhasil diupdate');
+            // return redirect()->to(base_url() . '/alternatif');
+            echo 'berhasil update data!!!';
         }
+    }
+
+    public function inputBobotKriteria($id_kriteria, $bobot)
+    {
+        $this->kriteriaModel->save([
+            'id' => $id_kriteria,
+            'bobot' => $bobot
+        ]);
     }
 }
