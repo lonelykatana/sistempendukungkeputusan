@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row" style="padding : 10px;">
         <div class="col">
-            <h3 class="mt-2">Pilihan Fixed Broadband</h3><a href="/alternatif/preferensi" class="btn btn-primary mt-3">Mulai proses</a>
+            <h3 class="mt-2">Pilihan Fixed Broadband</h3><a href="/kriteria/preferensi" class="btn btn-primary mt-3">Mulai proses</a>
 
             <div class="row row-cols-1 row-cols-md-4 g-4 mt-2 align-items-center">
                 <?php foreach ($wifi as $w) : ?>

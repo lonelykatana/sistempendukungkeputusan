@@ -15,7 +15,7 @@
             d($n) ?>
 
 
-            <form action="/alternatif/proses" method="post">
+            <form action="/kriteria/proses" method="post">
 
                 <table class="table">
                     <thead>

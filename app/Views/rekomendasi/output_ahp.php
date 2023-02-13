@@ -6,11 +6,11 @@
         <div class="col">
             <h3>Hasil AHP</h3>
             <?php
-            d(round($lambdaMax, 5));
-            d(round($consIndex, 5));
-            d(round($consRatio, 5));
+            d($lambdaMax);
+            d($consIndex);
+            d($consRatio);
 
-            if (round($consRatio, 5) > 0.1) {
+            if ($consRatio > 0.1) {
                 echo 'tidak konsisten';
             } else echo 'sudah konsisten';
             ?>
