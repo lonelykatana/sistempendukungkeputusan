@@ -5,20 +5,12 @@ namespace App\Models;
 use CodeIgniter\Database\Query;
 use CodeIgniter\Model;
 use mysqli;
+use PhpParser\Node\Expr\Cast\Array_;
 
 class KriteriaModel extends Model
 {
-    // protected $irModel;
     protected $table = 'kriteria';
-    //protected $useTimestamps = true;
     protected $allowedFields = ['nama', 'bobot', 'atribut'];
-    // public function __construct()
-    // {
-    //     $this->irModel = new IrModel();
-    // }
-
-
-
 
     public function getListNamaPilihan()
     {
@@ -86,5 +78,24 @@ class KriteriaModel extends Model
         $consRatio = $consIndex / ($irModel->getNilai($n));
 
         return $consRatio;
+    }
+
+    public function getKriteria()
+    {
+        $kriteria = array();
+        $query = $this->db->query('SELECT * FROM kriteria')->getResult();
+        foreach ($query as $row) {
+            $kriteria[$row->id] = array($row->nama, $row->atribut);
+        }
+        return $kriteria;
+    }
+
+    public function getBobotKriteria()
+    {
+        $query = $this->db->query('SELECT * FROM kriteria')->getResult();
+        foreach ($query as $row) {
+            $w[$row->id] = $row->bobot;
+        }
+        return $w;
     }
 }

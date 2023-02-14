@@ -8,15 +8,68 @@ class EvaluasiSeeder extends Seeder
 {
     public function run()
     {
-        $data=[
+        $data = [
             [
-                'id_alternatif' =>,
-                'id_kriteria'   =>,
-                'nilai'         =>
-            ]
+                'id_alternatif' => 1,
+                'id_kriteria'   => 1,
+                'nilai'         => 1
+            ],
+            [
+                'id_alternatif' => 1,
+                'id_kriteria'   => 2,
+                'nilai'         => 5
+            ],
+            [
+                'id_alternatif' => 1,
+                'id_kriteria'   => 2,
+                'nilai'         => 5
+            ],
+            [
+                'id_alternatif' => 1,
+                'id_kriteria'   => 1,
+                'nilai'         => 5
+            ],
+            [
+                'id_alternatif' => 1,
+                'id_kriteria'   => 1,
+                'nilai'         => 5
+            ],
+            [
+                'id_alternatif' => 1,
+                'id_kriteria'   => 1,
+                'nilai'         => 5
+            ],
+            [
+                'id_alternatif' => 1,
+                'id_kriteria'   => 1,
+                'nilai'         => 5
+            ],
+            [
+                'id_alternatif' => 1,
+                'id_kriteria'   => 1,
+                'nilai'         => 5
+            ],
+            [
+                'id_alternatif' => 1,
+                'id_kriteria'   => 1,
+                'nilai'         => 5
+            ],
+            [
+                'id_alternatif' => 1,
+                'id_kriteria'   => 1,
+                'nilai'         => 5
+            ],
+            [
+                'id_alternatif' => 1,
+                'id_kriteria'   => 1,
+                'nilai'         => 5
+            ],
+
+
+
         ];
+
 
         $this->db->table('evaluasi')->insertBatch($data);
     }
-    
 }

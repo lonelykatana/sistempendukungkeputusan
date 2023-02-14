@@ -66,7 +66,7 @@
                         } ?>
                     </tbody>
                 </table>
-                <button type=" submit" class="btn btn-primary">Proses</button>
+                <button type="submit" class="btn btn-primary">Proses</button>
             </form>
         </div>
     </div>

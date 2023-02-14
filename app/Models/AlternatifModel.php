@@ -25,4 +25,19 @@ class AlternatifModel extends Model
         $query = $this->db->query('SELECT * FROM alternatif');
         return $query->getNumRows();
     }
+
+    public function getAll()
+    {
+        return $this->db->query('SELECT * FROM alternatif')->getResult();
+    }
+
+    public function getAlternatif()
+    {
+        $alternatif = array();
+        $query = $this->db->query('SELECT * FROM alternatif')->getResult();
+        foreach ($query as $row) {
+            $alternatif[$row->id] = $row->nama;
+        }
+        return $alternatif;
+    }
 }

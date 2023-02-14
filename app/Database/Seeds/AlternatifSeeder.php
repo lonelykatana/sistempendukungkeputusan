@@ -17,7 +17,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 20,
                     'upload' => 20,
                     'jumlah_perangkat' => 3,
-                    'jangkauan' => 10,
+                    'jangkauan' => 20,
                     'gambar' => 'biznet.png'
                 ],
                 [
@@ -27,7 +27,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 50,
                     'upload' => 250,
                     'jumlah_perangkat' => 10,
-                    'jangkauan' => 10,
+                    'jangkauan' => 20,
                     'gambar' => 'biznet.png'
                 ],
                 [
@@ -37,7 +37,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 110,
                     'upload' => 110,
                     'jumlah_perangkat' => 20,
-                    'jangkauan' => 10,
+                    'jangkauan' => 30,
                     'gambar' => 'biznet.png'
                 ],
                 [
@@ -47,7 +47,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 125,
                     'upload' => 125,
                     'jumlah_perangkat' => 20,
-                    'jangkauan' => 10,
+                    'jangkauan' => 30,
                     'gambar' => 'biznet.png'
                 ],
                 [
@@ -117,7 +117,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 150,
                     'upload' => 150,
                     'jumlah_perangkat' => 20,
-                    'jangkauan' => 10,
+                    'jangkauan' => 30,
                     'gambar' => 'myrepublic.png'
                 ],
                 [
@@ -137,7 +137,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 50,
                     'upload' => 50,
                     'jumlah_perangkat' => 10,
-                    'jangkauan' => 10,
+                    'jangkauan' => 20,
                     'gambar' => 'cbn.png'
                 ],
                 [
@@ -147,7 +147,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 100,
                     'upload' => 100,
                     'jumlah_perangkat' => 20,
-                    'jangkauan' => 10,
+                    'jangkauan' => 30,
                     'gambar' => 'cbn.png'
                 ],
                 [
@@ -157,7 +157,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 300,
                     'upload' => 300,
                     'jumlah_perangkat' => 30,
-                    'jangkauan' => 10,
+                    'jangkauan' => 30,
                     'gambar' => 'cbn.png'
                 ],
                 [
@@ -197,7 +197,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 100,
                     'upload' => 100,
                     'jumlah_perangkat' => 12,
-                    'jangkauan' => 10,
+                    'jangkauan' => 30,
                     'gambar' => 'hispeed.png'
                 ],
                 [
@@ -227,7 +227,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 250,
                     'upload' => 250,
                     'jumlah_perangkat' => 15,
-                    'jangkauan' => 10,
+                    'jangkauan' => 30,
                     'gambar' => 'firstmedia.png'
                 ],
                 [
@@ -257,7 +257,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 70,
                     'upload' => 70,
                     'jumlah_perangkat' => 10,
-                    'jangkauan' => 10,
+                    'jangkauan' => 30,
                     'gambar' => 'mnc.png'
                 ],
                 [
@@ -337,7 +337,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 100,
                     'upload' => 100,
                     'jumlah_perangkat' => 15,
-                    'jangkauan' => 10,
+                    'jangkauan' => 20,
                     'gambar' => 'megavision.png'
                 ],
                 [
@@ -347,7 +347,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 100,
                     'upload' => 100,
                     'jumlah_perangkat' => 10,
-                    'jangkauan' => 10,
+                    'jangkauan' => 20,
                     'gambar' => 'xlhome.png'
                 ],
                 [
@@ -357,7 +357,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 300,
                     'upload' => 300,
                     'jumlah_perangkat' => 15,
-                    'jangkauan' => 10,
+                    'jangkauan' => 20,
                     'gambar' => 'xlhome.png'
                 ],
                 [
@@ -367,7 +367,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 1000,
                     'upload' => 1000,
                     'jumlah_perangkat' => 20,
-                    'jangkauan' => 10,
+                    'jangkauan' => 30,
                     'gambar' => 'xlhome.png'
                 ],
                 [
@@ -407,7 +407,7 @@ class AlternatifSeeder extends Seeder
                     'download' => 100,
                     'upload' => 100,
                     'jumlah_perangkat' => 15,
-                    'jangkauan' => 10,
+                    'jangkauan' => 30,
                     'gambar' => 'iconnet.png'
                 ],
 
