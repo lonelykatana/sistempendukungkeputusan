@@ -5,14 +5,16 @@
     <div class="row">
         <div class="col">
             <h3 class="mt-2">Perbandingan Kriteria</h3>
-            <?php if (session()->getFlashdata('pesan')) : ?>
-                <div class="alert alert-success" role="alert">
-                    <?= session()->getFlashdata('pesan'); ?>
-                </div>
-            <?php endif; ?>
+
             <?php
             d($pilihan);
             d($n) ?>
+
+            <?php if (session()->getFlashdata('mauApa')) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <?= session()->getFlashdata('mauApa'); ?>
+                </div>
+            <?php endif; ?>
 
 
             <form action="/kriteria/proses" method="post">
@@ -66,7 +68,7 @@
                         } ?>
                     </tbody>
                 </table>
-                <button type="submit" class="btn btn-primary">Proses</button>
+                <button type="submit" name="btnSubmit" class="btn btn-primary">Proses</button>
             </form>
         </div>
     </div>

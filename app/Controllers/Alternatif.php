@@ -35,6 +35,10 @@ class Alternatif extends BaseController
 
     public function aras()
     {
+        if (session()->getFlashdata('udahKlik') == false) {
+            session()->setFlashdata('mauApa', 'Silahkan isi form terlebih dahulu!');
+            return redirect()->to(base_url() . '/kriteria/preferensi');
+        };
         $alternatif = $this->alternatifModel->getAlternatif();
         $kriteria = $this->kriteriaModel->getKriteria();
         $w = $this->kriteriaModel->getBobotKriteria();

@@ -5,7 +5,9 @@
     <div class="row">
         <div class="col">
             <h3>Hasil ARAS</h3>
+
             <?php
+            //d($cek);
             d($K);
             d($pilih);
             //d($nilai);

@@ -34,6 +34,8 @@ class Kriteria extends BaseController
         $n = $this->kriteriaModel->getJumlahKriteria();
         $matriks = array();
         $urut = 0;
+        $udahKlik = isset($_POST['btnSubmit']);
+
 
         for ($x = 0; $x <= ($n - 2); $x++) {
             for ($y = ($x + 1); $y <= ($n - 1); $y++) {
@@ -101,7 +103,9 @@ class Kriteria extends BaseController
             'consRatio' => $consRatio
         ];
 
-        return view('/rekomendasi/output_ahp', $data);
+        //return view('/rekomendasi/output_ahp', $data);
+        session()->setFlashdata('udahKlik', $udahKlik);
+        return redirect()->to(base_url() . '/alternatif/aras');
     }
 
 
