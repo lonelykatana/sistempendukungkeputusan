@@ -23,7 +23,7 @@ class Kriteria extends Migration
                 'type' => 'FLOAT',
                 'null' => true
             ],
-            "atribut SET('cost','benefit')"
+            "atribut SET('benefit','cost')"
 
         ]);
         $this->forge->addKey('id', true);
