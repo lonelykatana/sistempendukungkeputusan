@@ -1,40 +1,38 @@
-<?= $this->extend('layout/template'); ?>
+<?= $this->extend('layout/template2'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container">
-    <div class="row" style="padding : 10px;">
-        <div class="col">
-            <h3 class="mt-2">Pilihan Fixed Broadband</h3><a href="/kriteria/preferensi" class="btn btn-primary mt-3">Mulai proses</a>
 
-            <div class="row row-cols-1 row-cols-md-4 g-4 mt-2 align-items-center">
+<main id="main">
+    <!-- ======= Pricing Section ======= -->
+    <section id="inner-page" class="pricing section-bg" style="margin-top:30px">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Opsi Fixed Broadband</h2>
+                <a href="/kriteria/preferensi" class="btn btn-primary mt-2 mb-2">Mulai proses</a>
+            </div>
+            <div class="row">
                 <?php foreach ($wifi as $w) : ?>
-
-                    <div class="col">
-                        <div class="card text-center h-100 w-60">
-                            <div class="card-header">
-                                <img src="/assets/img/<?= $w['gambar']; ?>" class="card-img-top" alt="..." style="opacity:0.2;width:200px; height:70px;">
-                                <div class="card-img-overlay" style="padding: 0;">
-                                    <h5 class="card-title " style="margin-top: 11%;"><?= $w['nama']; ?></h5>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Rp <?= number_format($w['harga']); ?></h5>
-                                <h6 class="card-title"><?= ($w['kuota'] == 0) ? 'Unlimited' : $w['kuota'] . ' GB'; ?></h6>
-                                <h6 class="card-title">Download : <?= $w['download'] . ' GB'; ?></h6>
-                                <h6 class="card-title">Upload : <?= $w['upload'] . ' GB'; ?></h6>
-                                <h6 class="card-title">Jumlah Perangkat : <?= $w['jumlah_perangkat']; ?></h6>
-                                <h6 class="card-title">Jangkauan sinyal : <?= $w['jangkauan']; ?></h6>
-                            </div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="box">
+                            <h3><?= $w['nama']; ?></h3>
+                            <h4><sup>Rp </sup><?= number_format($w['harga']); ?><span> / bulan</span></h4>
+                            <ul>
+                                <li class><?= ($w['kuota'] == 0) ? 'Unlimited' : $w['kuota'] . ' GB'; ?></li>
+                                <li>Download : <?= $w['download'] . ' GB'; ?></li>
+                                <li>Upload : <?= $w['upload'] . ' GB'; ?></li>
+                                <li>Jumlah Perangkat : <?= $w['jumlah_perangkat']; ?></li>
+                                <li class>Jangkauan sinyal : <?= $w['jangkauan']; ?></li>
+                            </ul>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
-
         </div>
-    </div>
-</div>
-<button type="button" class="btn btn-danger" id="btn-back-to-top">
-    <i class='fas fa-chevron-up' style='font-size:20px;color:white'></i>
-</button>
+    </section><!-- End Pricing Section -->
+
+
+</main><!-- End #main -->
+
 
 <?= $this->endSection(); ?>
