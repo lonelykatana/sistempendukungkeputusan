@@ -5,11 +5,17 @@
     <div class="row">
         <div class="col">
             <h3>Hasil ARAS</h3>
+            <?php $ratio = session()->getFlashdata('consRatio'); ?>
+
+
+
+
 
             <?php
             //d($cek);
             d($K);
             d($pilih);
+            d($ratio);
             //d($nilai);
             // d($alternatif);
 
@@ -40,7 +46,13 @@
 
                 $cek2++;
             }
+
+            if ($ratio > 0.1) {
+                echo 'tidak konsisten';
+            } else echo 'sudah konsisten';
             ?>
+
+
         </div>
     </div>
 </div>

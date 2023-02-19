@@ -105,6 +105,7 @@ class Kriteria extends BaseController
 
         //return view('/rekomendasi/output_ahp', $data);
         session()->setFlashdata('udahKlik', $udahKlik);
+        session()->setFlashdata('consRatio', $consRatio);
         return redirect()->to(base_url() . '/alternatif/aras');
     }
 
