@@ -11,12 +11,13 @@ class RankingModel extends Model
     //protected $useTimestamps = true;
     protected $allowedFields = ['id_alternatif', 'nilai'];
 
-    // public function getKomik($slug = false)
-    // {
-    //     if ($slug == false) {
-    //         return $this->findAll();
-    //     }
-
-    //     return $this->where(['slug' => $slug])->first();
-    // }
+    public function getRanking()
+    {
+        $query = $this->db->query("SELECT * FROM ranking ORDER BY nilai DESC");
+        if (!$query) {
+            echo 'Error!';
+            exit();
+        }
+        return $query;
+    }
 }

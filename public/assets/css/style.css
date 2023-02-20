@@ -133,7 +133,7 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgba(24, 6, 185, 0.8);
+  background: rgba(24, 6, 185, 0.84);
   padding: 12px 0;
 }
 
@@ -1682,14 +1682,30 @@ section {
   color: #fff;
   text-decoration: none;
 }
+.containerbutton>.btn{
+  padding: 5px;
+  width: calc(10% - 10px);;
+
+}
 .btn-primary{
   background: #5846f9;
   border: 0;
-  padding: 10px 24px;
+  /* padding: 10px 24px; */
   color: #fff;
   transition: 0.4s;
   border-radius: 5px;
 }
 .btn-primary:hover{
   background: #7b27d8;
+}
+
+.containerbutton{
+  margin-top:50px;
+  display: flex;
+}
+.cl-1{
+  justify-content: center;
+}
+.cl-1 a{
+  margin-right: 20px;
 }

@@ -1,59 +1,85 @@
-<?= $this->extend('layout/template'); ?>
+<?= $this->extend('layout/template2'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h3>Hasil ARAS</h3>
-            <?php $ratio = session()->getFlashdata('consRatio'); ?>
 
+<main id="main">
 
+    <section id="inner-page" class="pricing section-bg" style="margin-top:30px">
+        <div class="container" data-aos="fade-up">
 
+            <div class="section-title">
+                <?php
+                d($harga);
+                d($pilih);
+                d($K) ?>
+                <h2>RANGKING</h2>
+                <p>Berdasarkan kriteria yang anda pilih, fixed broadband yang terbaik untuk anda adalah : </p>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center" data-aos="fade-up" data-aos-delay="50">
+                    <div class="box" style="width:300px">
+                        <span class="advanced">Terbaik</span>
+                        <h3><?= $harga[$pilih][0]; ?></h3>
+                        <h4><sup>Rp </sup><?= number_format($harga[$pilih][1]); ?><span> / month</span></h4>
+                        <ul>
+                            <li><?= ($harga[$pilih][2] == 0) ? 'Unlimited' : $harga[$pilih][2] . ' GB'; ?></li>
+                            <li>Download : <?= $harga[$pilih][3] . ' GB'; ?></li>
+                            <li>Upload : <?= $harga[$pilih][4] . ' GB'; ?></li>
+                            <li>Jumlah Perangkat : <?= $harga[$pilih][5]; ?></li>
+                            <li>Jangkauan : <?= $harga[$pilih][6] . ' meter'; ?></li>
+                        </ul>
+                    </div>
 
+                </div>
 
-            <?php
-            //d($cek);
-            d($K);
-            d($pilih);
-            d($ratio);
-            //d($nilai);
-            // d($alternatif);
+            </div>
+            <br>
+            <div class="section-title">
+                <p>Yang diikuti dengan : </p>
+            </div>
 
-            echo "Dari hasil perhitungan dipilih alternatif ke-" . $pilih
-                . " ({$alternatif[$pilih]}) <br>dengan nilai keseimbangan optimum "
-                . " sebesar " . ($K[$pilih] * 100) . " %" . "<br>";
+            <div class="row">
+                <?php
+                $cek = 0;
+                $n = 2; ?>
+                <?php foreach ($K as $key => $value) : ?>
+                    <?php if ($cek < 5) : ?>
+                        <?php $mykey = $key ?>
+                        <?php if ($mykey != $pilih) : ?>
+                            <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="50">
+                                <div class="box">
+                                    <span class="advanced"><?= $n; ?></span>
+                                    <h3><?= $harga[$mykey][0]; ?></h3>
+                                    <h4><sup>Rp </sup><?= number_format($harga[$mykey][1]); ?><span> / month</span></h4>
+                                    <ul>
+                                        <li><?= ($harga[$mykey][2] == 0) ? 'Unlimited' : $harga[$mykey][2] . ' GB'; ?></li>
+                                        <li>Download : <?= $harga[$mykey][3] . ' GB'; ?></li>
+                                        <li>Upload : <?= $harga[$mykey][4] . ' GB'; ?></li>
+                                        <li>Jumlah Perangkat : <?= $harga[$mykey][5]; ?></li>
+                                        <li>Jangkauan : <?= $harga[$mykey][6] . ' meter'; ?></li>
+                                    </ul>
+                                </div>
 
-
-
-            // $cek = 0;
-            // foreach ($K as $n) {
-            //     if ($cek < 4) {
-            //         echo "$n" . "<br>";
-            //     }
-            //     $cek++;
-            // }
-
-            $cek2 = 0;
-            $n = 1;
-            foreach ($K as $key => $value) {
-
-                if ($cek2 < 5) {
-                    $mykey = $key;
-                    echo "$n" . ". "  . "$alternatif[$mykey]" . " dengan nilai " . $value * 100 . "<br>";
-                    next($K);
-                    $n++;
-                }
-
-                $cek2++;
-            }
-
-            if ($ratio > 0.1) {
-                echo 'tidak konsisten';
-            } else echo 'sudah konsisten';
-            ?>
-
-
+                            </div>
+                            <?php
+                            next($K);
+                            $n++;
+                            ?>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <?php $cek++ ?>
+                <?php endforeach; ?>
+            </div>
         </div>
-    </div>
-</div>
+        <div class="containerbutton text-center cl-1">
+            <a href="/kriteria/preferensi" class="btn btn-primary">Kriteria</a>
+            <a href="/pages/detail" class="btn btn-primary">Detail</a>
+        </div>
+    </section>
+
+
+</main><!-- End #main -->
+
+
+
 <?= $this->endSection(); ?>

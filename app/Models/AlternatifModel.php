@@ -40,4 +40,16 @@ class AlternatifModel extends Model
         }
         return $alternatif;
     }
+    public function getAlternatifHarga()
+    {
+        $harga = array();
+        $query = $this->db->query('SELECT * FROM alternatif')->getResult();
+        foreach ($query as $row) {
+            $harga[$row->id] = [
+                $row->nama,
+                $row->harga, $row->kuota, $row->download, $row->upload, $row->jumlah_perangkat, $row->jangkauan
+            ];
+        }
+        return $harga;
+    }
 }

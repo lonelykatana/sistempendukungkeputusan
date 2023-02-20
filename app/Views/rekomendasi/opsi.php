@@ -8,12 +8,12 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Opsi Fixed Broadband</h2>
+                <h2>OPSI FIXED BROADBAND</h2>
                 <a href="/kriteria/preferensi" class="btn btn-primary mt-2 mb-2">Mulai proses</a>
             </div>
             <div class="row">
                 <?php foreach ($wifi as $w) : ?>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="50">
                         <div class="box">
                             <h3><?= $w['nama']; ?></h3>
                             <h4><sup>Rp </sup><?= number_format($w['harga']); ?><span> / bulan</span></h4>
