@@ -7,6 +7,7 @@ use App\Models\AlternatifModel;
 use App\Models\EvaluasiModel;
 use App\Models\KriteriaModel;
 use App\Models\PerbandinganKriteriaModel;
+use App\Models\RankingModel;
 use CodeIgniter\CodeIgniter;
 use PhpParser\Node\Expr\Cast\Array_;
 
@@ -16,12 +17,14 @@ class Alternatif extends BaseController
     protected $kriteriaModel;
     protected $perbandinganKriteriaModel;
     protected $evaluasiModel;
+    protected $rankingModel;
     public function __construct()
     {
         $this->alternatifModel = new AlternatifModel();
         $this->kriteriaModel = new KriteriaModel();
         $this->perbandinganKriteriaModel = new PerbandinganKriteriaModel();
         $this->evaluasiModel = new EvaluasiModel();
+        $this->rankingModel = new RankingModel();
     }
 
     public function index()
@@ -40,6 +43,7 @@ class Alternatif extends BaseController
             return redirect()->to(base_url() . '/kriteria/preferensi');
         };
         $alternatif = $this->alternatifModel->getAlternatif();
+        $harga = $this->alternatifModel->getAlternatifHarga();
         $kriteria = $this->kriteriaModel->getKriteria();
         $w = $this->kriteriaModel->getBobotKriteria();
         $X = array();
@@ -100,15 +104,45 @@ class Alternatif extends BaseController
         arsort($K);
         $pilih = key($K);
         //$nilai = array_shift($K);
+        $db = \Config\Database::connect();
+        $builder = $db->table('ranking');
+        $builder->truncate();
+
+        foreach ($K as $key => $value) {
+            //$mykey = $key;
+            $this->inputRanking($key, $value);
+            //next($K);
+        }
 
         $data = [
             'pilih' => $pilih,
             //'nilai' => $nilai,
             'alternatif' => $alternatif,
+            'harga' => $harga,
             'K' => $K,
             'title' => 'output ARAS',
         ];
 
         return view('/rekomendasi/ranking', $data);
+    }
+
+    public function inputRanking($id, $nilai)
+    {
+
+
+        $result = $this->rankingModel->getRanking();
+        $this->rankingModel->save([
+            'id_alternatif' => $id,
+            'nilai' => $nilai
+        ]);
+        //  else {
+        //     $builder->set('nilai', $nilai, false);
+        //     $builder->where('id_alternatif', $id);
+        //     $builder->update();
+
+        //     // session()->setFlashdata('pesan', 'Data berhasil diupdate');
+        //     // return redirect()->to(base_url() . '/alternatif');
+        //     echo 'berhasil update data!!!';
+        // }
     }
 }
