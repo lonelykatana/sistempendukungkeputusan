@@ -13,6 +13,7 @@
             <li><a href="/alternatif">Opsi</a></li>
             <li><a href="/kriteria/preferensi">Preferensi</a></li>
             <li><a href="/alternatif/aras">Ranking</a></li>
+            <li><a href="/pages/detail">Detail</a></li>
           </ul>
         </li>
         <li><a class="nav-link scrollto" href="/pages/about">About</a></li>

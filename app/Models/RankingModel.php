@@ -20,4 +20,8 @@ class RankingModel extends Model
         }
         return $query;
     }
+    public function getRankingAndAlternatif()
+    {
+        return $this->db->query('SELECT alternatif.id,alternatif.nama,alternatif.harga, alternatif.kuota,alternatif.download,alternatif.upload,alternatif.jumlah_perangkat,alternatif.jangkauan,ranking.nilai FROM ranking INNER JOIN alternatif ON ranking.id_alternatif=alternatif.id ORDER BY ranking.nilai DESC')->getResult('array');
+    }
 }

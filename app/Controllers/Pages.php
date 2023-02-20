@@ -6,6 +6,7 @@ use App\Models\AlternatifModel;
 use App\Models\EvaluasiModel;
 use App\Models\KriteriaModel;
 use App\Models\PerbandinganKriteriaModel;
+use App\Models\RankingModel;
 
 class Pages extends BaseController
 {
@@ -14,6 +15,7 @@ class Pages extends BaseController
     protected $perbandinganKriteriaModel;
     protected $alternatifModel;
     protected $evaluasiModel;
+    protected $rankingModel;
 
     public function __construct()
     {
@@ -21,6 +23,7 @@ class Pages extends BaseController
         $this->perbandinganKriteriaModel = new PerbandinganKriteriaModel();
         $this->alternatifModel = new AlternatifModel();
         $this->evaluasiModel = new EvaluasiModel();
+        $this->rankingModel = new RankingModel();
     }
     public function index()
     {
@@ -44,6 +47,21 @@ class Pages extends BaseController
             'title' => 'About'
         ];
         return view('pages/about', $data);
+    }
+    public function detail()
+    {
+        session();
+
+        if (!isset($_SESSION['tekan'])) {
+            session()->setFlashdata('mauApa', 'Silahkan isi form terlebih dahulu!');
+            return redirect()->to(base_url() . '/kriteria/preferensi');
+        };
+        $result = $this->rankingModel->getRankingAndAlternatif();
+        $data = [
+            'title' => 'Detail Rangking',
+            'result' => $result
+        ];
+        return view('pages/detail', $data);
     }
 
     public function evaluasi()

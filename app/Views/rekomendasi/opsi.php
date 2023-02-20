@@ -19,8 +19,8 @@
                             <h4><sup>Rp </sup><?= number_format($w['harga']); ?><span> / bulan</span></h4>
                             <ul>
                                 <li class><?= ($w['kuota'] == 0) ? 'Unlimited' : $w['kuota'] . ' GB'; ?></li>
-                                <li>Download : <?= $w['download'] . ' GB'; ?></li>
-                                <li>Upload : <?= $w['upload'] . ' GB'; ?></li>
+                                <li>Download : <?= $w['download'] . ' Mbps'; ?></li>
+                                <li>Upload : <?= $w['upload'] . ' Mbps'; ?></li>
                                 <li>Jumlah Perangkat : <?= $w['jumlah_perangkat']; ?></li>
                                 <li class>Jangkauan sinyal : <?= $w['jangkauan']; ?></li>
                             </ul>

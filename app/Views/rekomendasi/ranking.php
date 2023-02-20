@@ -8,10 +8,6 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <?php
-                d($harga);
-                d($pilih);
-                d($K) ?>
                 <h2>RANGKING</h2>
                 <p>Berdasarkan kriteria yang anda pilih, fixed broadband yang terbaik untuk anda adalah : </p>
             </div>
@@ -23,8 +19,8 @@
                         <h4><sup>Rp </sup><?= number_format($harga[$pilih][1]); ?><span> / month</span></h4>
                         <ul>
                             <li><?= ($harga[$pilih][2] == 0) ? 'Unlimited' : $harga[$pilih][2] . ' GB'; ?></li>
-                            <li>Download : <?= $harga[$pilih][3] . ' GB'; ?></li>
-                            <li>Upload : <?= $harga[$pilih][4] . ' GB'; ?></li>
+                            <li>Download : <?= $harga[$pilih][3] . ' Mbps'; ?></li>
+                            <li>Upload : <?= $harga[$pilih][4] . ' Mbps'; ?></li>
                             <li>Jumlah Perangkat : <?= $harga[$pilih][5]; ?></li>
                             <li>Jangkauan : <?= $harga[$pilih][6] . ' meter'; ?></li>
                         </ul>

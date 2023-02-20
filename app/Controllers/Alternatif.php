@@ -38,7 +38,9 @@ class Alternatif extends BaseController
 
     public function aras()
     {
-        if (session()->getFlashdata('udahKlik') == false) {
+        session();
+
+        if (!isset($_SESSION['tekan'])) {
             session()->setFlashdata('mauApa', 'Silahkan isi form terlebih dahulu!');
             return redirect()->to(base_url() . '/kriteria/preferensi');
         };

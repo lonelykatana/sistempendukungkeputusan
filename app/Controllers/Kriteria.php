@@ -18,6 +18,7 @@ class Kriteria extends BaseController
         $this->perbandinganKriteriaModel = new PerbandinganKriteriaModel();
     }
 
+
     public function preferensi()
     {
         $data = [
@@ -31,10 +32,15 @@ class Kriteria extends BaseController
 
     public function proses()
     {
+        //$session = \Config\Services::session();
+        session();
         $n = $this->kriteriaModel->getJumlahKriteria();
         $matriks = array();
         $urut = 0;
-        $udahKlik = isset($_POST['btnSubmit']);
+        //$udahKlik = isset($_POST['btnSubmit']);
+        if (isset($_POST['btnSubmit'])) {
+            $_SESSION['tekan'] = 'sudah';
+        }
 
 
         for ($x = 0; $x <= ($n - 2); $x++) {
@@ -104,8 +110,7 @@ class Kriteria extends BaseController
         ];
 
         //return view('/rekomendasi/output_ahp', $data);
-        session()->setFlashdata('udahKlik', $udahKlik);
-        session()->setFlashdata('consRatio', $consRatio);
+        //session()->setFlashdata('udahKlik', $udahKlik);
         return redirect()->to(base_url() . '/alternatif/aras');
     }
 
