@@ -42,7 +42,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #5846f9;
+  background: rgba(8, 136, 44, 0.9);
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -56,7 +56,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #7b27d8;
+  background: rgba(8,136,88, 0.9);
   color: #fff;
 }
 
@@ -133,7 +133,7 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgba(24, 6, 185, 0.84);
+  background:rgba(8,136,88,255);
   padding: 12px 0;
 }
 
@@ -595,7 +595,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #5846f9;
+  background: rgba(8,136,88,255);
   bottom: 0;
   left: calc(50% - 25px);
 }
@@ -1526,7 +1526,7 @@ section {
 #footer {
   color: #fff;
   font-size: 14px;
-  background: linear-gradient(45deg, rgba(86, 58, 250, 0.9) 0%, rgba(116, 15, 214, 0.9) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background: linear-gradient(45deg, rgba(8, 136, 44, 0.9) 0%, rgba(8,136,88, 0.9) 100%), url("../img/hero-bg.jpg") center center no-repeat;
   background-size: cover;
 }
 
@@ -1686,7 +1686,7 @@ section {
   font-size: 25px;
   display: inline-block;
   background: rgba(255, 255, 255, 0.1);
-  color: #8577fb;
+  color: rgb(11, 211, 138);
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -1698,8 +1698,8 @@ section {
 }
 
 #about .social-links a:hover {
-  background: #5846f93c;
-  color: #8577fb;
+  background:rgba(199, 198, 198, 0.715) ;
+  color: rgba(8,136,88,255);
   text-decoration: none;
 }
 .containerbutton>.btn{
@@ -1708,7 +1708,7 @@ section {
 
 }
 .btn-primary{
-  background: #5846f9;
+  background: rgba(8, 136, 44, 0.9);
   border: 0;
   /* padding: 10px 24px; */
   color: #fff;
@@ -1716,7 +1716,7 @@ section {
   border-radius: 5px;
 }
 .btn-primary:hover{
-  background: #7b27d8;
+  background: rgba(8,136,88, 0.9);
 }
 
 .containerbutton{

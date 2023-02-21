@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,7 +25,7 @@
   <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/style2.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Techie - v4.10.0
@@ -37,13 +37,12 @@
 
 <body>
 
-  <?= $this->include('layout/navbar'); ?>
+  <?= $this->include('layout/navbar3'); ?>
 
   <?= $this->renderSection('content'); ?>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
 
     <div class="container">
 
@@ -53,10 +52,6 @@
             &copy; Copyright <strong><span>WIFIED</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/techie-free-skin-bootstrap-3/ -->
             Designed by <a href="https://www.linkedin.com/in/erickgultom/">Erick Gultom</a>
           </div>
         </div>
@@ -65,15 +60,11 @@
           <a href="https://github.com/lonelykatana" class="google-plus"><i class="bx bxl-github"></i></a>
           <a href="https://www.linkedin.com/in/erickgultom/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
+
       </div>
-
-    </div>
-
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    <div id="preloader"></div>
-  </footer>
-  <!-- End Footer -->
-
+  </footer><!-- End Footer -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
 </body>
 
 <!-- Vendor JS Files -->
