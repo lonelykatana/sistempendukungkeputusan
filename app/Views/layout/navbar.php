@@ -8,15 +8,15 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a class="nav-link scrollto active" href="/">Beranda</a></li>
-        <li class="dropdown"><a href=""><span>Rekomendasi</span> <i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown"><a href="/alternatif"><span>Rekomendasi</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="/alternatif">Opsi</a></li>
             <li><a href="/kriteria/preferensi">Preferensi</a></li>
-            <li><a href="/alternatif/aras">Ranking</a></li>
+            <li><a href="/alternatif/aras">Peringkat</a></li>
             <li><a href="/pages/detail">Detail</a></li>
           </ul>
         </li>
-        <li><a class="nav-link scrollto" href="/pages/about">About</a></li>
+        <li><a class="nav-link scrollto" href="/pages/about">Tentang</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->

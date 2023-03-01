@@ -7,7 +7,7 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Detail Rangking</h2>
+                <h2>Detail Peringkat</h2>
 
             </div>
             <div class="row">

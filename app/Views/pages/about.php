@@ -9,7 +9,7 @@
 
             <div class="section-title">
                 <h2>Tentang</h2>
-                <p style="font-size:larger;">Website ini merupakan sebuah Sistem Pendukung Keputusan yang menggunakan kombinasi metode Analytical Hierarchy Process (AHP) dan Additive Ratio Assessment (ARAS) untuk memberikan rekomendasi <i>Fixed Brodband</i> terbaik sesuai dengan kebutuhan pengguna. Tujuan website ini adalah sebagai syarat menyelesaiakan tugas akhir atau skripsi dan sebagai referensi implementasi metode AHP dan ARAS. <br><br> Website ini dibuat oleh : </p>
+                <p style="font-size:larger;">Website ini merupakan sebuah Sistem Pendukung Keputusan yang menggunakan kombinasi metode Analytic Hierarchy Process (AHP) dan Additive Ratio Assessment (ARAS) untuk memberikan rekomendasi <i>Fixed Brodband</i> terbaik sesuai dengan kebutuhan pengguna. Tujuan website ini adalah sebagai syarat menyelesaiakan tugas akhir atau skripsi dan sebagai referensi implementasi metode AHP dan ARAS. <br><br> Website ini dibuat oleh : </p>
 
             </div>
 

@@ -34,7 +34,7 @@
                     <h3>Apakah anda kesulitan mencari WiFi yang sesuai dengan kebutuhan anda?
                     </h3>
                     <p clss="fst-italic">
-                        Website ini merupakan solusi dari masalah anda. Dengan menggunakan kombinasi metode Analytical Hierarchy Process (AHP) dan Additive Ratio Assessment (ARAS), anda akan mendapatkan rekomendasi WiFi terbaik hanya dengan mengikuti beberapa langkah singkat.
+                        Website ini merupakan solusi dari masalah anda. Dengan menggunakan kombinasi metode Analytic Hierarchy Process (AHP) dan Additive Ratio Assessment (ARAS), anda akan mendapatkan rekomendasi WiFi terbaik hanya dengan mengikuti beberapa langkah singkat.
                     </p>
                     <ul>
                         <li><i class="bi bi-check-circle"></i> Mudah dan cepat.</li>

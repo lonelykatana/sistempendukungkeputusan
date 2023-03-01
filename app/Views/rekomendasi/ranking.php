@@ -8,7 +8,7 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>RANGKING</h2>
+                <h2>PERINGKAT</h2>
                 <p>Berdasarkan kriteria yang anda pilih, fixed broadband yang terbaik untuk anda adalah : </p>
             </div>
             <div class="row">
